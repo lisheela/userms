@@ -1,0 +1,66 @@
+drop database userdb;
+create schema userdb;
+use userdb;
+
+create table buyer(
+buyer_id varchar(50) primary key,
+name varchar(50),
+email varchar (50),
+phone_number bigint,
+password varchar(50),
+is_privileged boolean,
+reward_points varchar(50),
+is_active boolean
+);
+
+insert into buyer values('B101','Manju','manju526@gmail.com',9009009001,'manju#21',true,100,false);
+insert into buyer values('B102','Deeksha','deeksha505@gmail.com',9009009002,'deeksha$87',false,200,true);
+insert into buyer values('B103','Keerthi','keerthi549@gmail.com',9009009003,'keerthi@32',true,300,true);
+insert into buyer values('B104','swathi','swathi550@gmail.com',9009009004,'swathi*65',false,400,true);
+
+select * from buyer;
+
+create table seller(
+seller_id integer primary key,
+name varchar(50),
+email varchar(50),
+phone_number bigint,
+password varchar(50),
+is_active boolean
+);
+
+
+insert into seller values(101,'Manju','manju526@gmail.com',9009009001,'manju#21',true);
+insert into seller values(102,'Deeksha','deeksha505@gmail.com',9009009002,'deeksha$87',false);
+insert into seller values(103,'Keerthi','keerthi549@gmail.com',9009009003,'keerthi@32',true);
+insert into seller values(104,'swathi','swathi550@gmail.com',9009009004,'swathi*65',false);
+
+select * from seller;
+
+create table wishlist(
+buyer_id varchar(50),
+product_id varchar(50),
+primary key(buyer_id,product_id)
+);
+
+insert into wishlist values('B101','P101');
+insert into wishlist values('B102','P102');
+insert into wishlist values('B102','P101');
+insert into wishlist values('B104','P103');
+
+select * from wishlist;
+
+create table cart(
+buyer_id varchar(50),
+product_id varchar(50),
+quantity integer,
+primary key(buyer_id,product_id)
+);
+
+insert into cart values('B101','P101',20);
+insert into cart values('B102','P102',30);
+insert into cart values('B103','P101',45);
+insert into cart values('B104','P103',10);
+
+select * from cart;
+
