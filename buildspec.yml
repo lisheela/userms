@@ -2,10 +2,10 @@ version: 0.2
 
 env:
   secrets-manager:
-    LOGIN: SonarCred:11cc1a6f0c81bea0ae0d4d9351bc0783549dd4a2
-    HOST: SonarCred:http://sonarcloud.io/
-    Organization: SonarCred:lisheela
-    Project: SonarCred:com.market.ordermanagement.user:UserMS
+    LOGIN: SonarCred:sonartoken
+    HOST: SonarCred:host
+    Organization: SonarCred:organization
+    Project: SonarCred:projectKey
 
 phases:
   install:
